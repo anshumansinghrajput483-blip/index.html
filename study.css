@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --text: #172033;
+    --secondary: #667085;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --border: #e5e7eb;
+    --success: #16a34a;
+}
+
+body.dark {
+    --bg: #101827;
+    --card: #172033;
+    --text: #f8fafc;
+    --secondary: #aab4c3;
+    --primary: #60a5fa;
+    --primary-dark: #3b82f6;
+    --border: #273449;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+
+/* HEADER */
+
+header {
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 20px;
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+header p {
+    color: var(--secondary);
+    margin-top: 5px;
+}
+
+#themeBtn {
+    border: none;
+    background: var(--bg);
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+/* MAIN */
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+/* HERO */
+
+.hero {
+    background: var(--primary);
+    color: white;
+
+    border-radius: 20px;
+    padding: 30px;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.countdown div {
+    background: rgba(255,255,255,0.15);
+
+    border-radius: 12px;
+
+    padding: 15px 25px;
+
+    min-width: 100px;
+}
+
+.countdown span {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.countdown small {
+    opacity: 0.9;
+}
+
+
+/* DASHBOARD */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(200px, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card strong {
+    font-size: 30px;
+}
+
+.card p {
+    color: var(--secondary);
+}
+
+.card input {
+    width: 100%;
+    padding: 10px;
+
+    margin-top: 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: var(--bg);
+    color: var(--text);
+}
+
+button {
+    border: none;
+
+    background: var(--primary);
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    margin-top: 8px;
+}
+
+button:hover {
+    background: var(--primary-dark);
+}
+
+
+/* PROGRESS */
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+
+    background: var(--border);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-top: 10px;
+}
+
+.progress-bar div {
+    height: 100%;
+
+    width: 0%;
+
+    background: var(--success);
+
+    transition: 0.4s;
+}
+
+
+/* DATE */
+
+.date-section {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.date-section button {
+    margin: 0;
+}
+
+
+/* TASKS */
+
+.tasks,
+.subjects,
+.notes,
+.motivation {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+}
+
+.section-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.section-title button {
+    margin: 0;
+}
+
+
+/* TASK */
+
+.task {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px;
+
+    border-bottom: 1px solid var(--border);
+
+    transition: 0.2s;
+}
+
+.task:last-child {
+    border-bottom: none;
+}
+
+.task input {
+    width: 20px;
+    height: 20px;
+
+    cursor: pointer;
+}
+
+.task label {
+    cursor: pointer;
+}
+
+.task.completed label {
+    text-decoration: line-through;
+
+    opacity: 0.5;
+}
+
+.subject-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+.subject {
+    border: 1px solid var(--border);
+
+    padding: 15px;
+
+    border-radius: 12px;
+}
+
+.subject p {
+    margin-top: 7px;
+
+    color: var(--secondary);
+}
+
+
+/* NOTES */
+
+textarea {
+    width: 100%;
+
+    min-height: 150px;
+
+    resize: vertical;
+
+    padding: 15px;
+
+    margin-top: 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 15px;
+}
+
+
+/* MOTIVATION */
+
+.motivation {
+    text-align: center;
+
+    background: var(--primary);
+
+    color: white;
+}
+
+.motivation p {
+    margin-top: 12px;
+
+    font-size: 18px;
+}
+
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    color: var(--secondary);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 21px;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    .hero {
+        padding: 20px;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .countdown {
+        gap: 8px;
+    }
+
+    .countdown div {
+        min-width: 70px;
+
+        padding: 10px;
+    }
+
+    .countdown span {
+        font-size: 22px;
+    }
+
+    .date-section {
+        gap: 5px;
+    }
+
+    .date-section button {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
